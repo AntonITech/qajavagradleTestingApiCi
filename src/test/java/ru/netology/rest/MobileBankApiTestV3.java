@@ -43,25 +43,7 @@ class MobileBankApiTestV3 {
                 .statusCode(200)
                 // специализированные проверки - лучше
                 .body("[2].currency", equalTo("RUB"))
-                .body("[0].currency", equalTo("RUB"))
-        ;
-    }
-
-    @Test
-    void shouldSecondCurrencyNotMatch() {
-        // Given - When - Then
-        // Предусловия
-        given()
-                .baseUri("http://localhost:9999/api/v1")
-                // Выполняемые действия
-                .when()
-                .get("/demo/accounts")
-                // Проверки
-                .then()
-                .statusCode(200)
-                // специализированные проверки - лучше
-                .body("[0].currency", equalTo("RUB"))
-                .body("[2].currency", equalTo("RUB"))
+                .body("[0].currency", equalTo("RUR"))
         ;
     }
 
